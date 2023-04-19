@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery无缝滚动插件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .i35-wrap {
+            margin: 50px auto 0;
+            width: 360px;
+            vertical-align: top;
+            border: 1px solid rgb(255, 255, 255);
+            /* box-shadow: rgb(164, 160, 157) 1px 1px 9px -3px; */
+            background-color: rgb(255, 255, 255);
+        }
+
+        .i35-title {
+            display: flex;
+            border-bottom: 2px solid rgb(255, 255, 255);
+            height: 60px;
+            line-height: 40px;
+        }
+
+        .i35-title li {
+            text-align: center;
+            flex: 1 1 1px;
+            cursor: pointer;
+            padding: 10px 30px;
+            color: rgb(51, 51, 51);
+        }
+
+        .i35-title li.active {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+        }
+
+        .i35-con {
+            padding: 20px;
+        }
+
+        .i35-con .content {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .i35-con .content li {
+            font-size: 12px;
+            height: 30px;
+            line-height: 30px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="i35-wrap">
+        <ul class="i35-title">
+            <!-- <li class="active">留守儿童新闻</li> -->
+            <!-- <li>新闻</li> -->
+        </ul>
+        <div class="i35-con">
+            <div class="content" style="display: block;">
+                <ul class="scroll">
+                    <li>15岁留守女孩玩手机游戏一天，突然右眼失明</li>
+                    <li>7岁男孩沉迷玩手机，一觉醒来脖子动不了</li>
+                    <li>15岁男童玩手机一个月,每天睡眠时间不到三小时,最后中风瘫痪</li>
+                    <li>13岁男童因为父母没收其手机跳楼死亡</li>
+                    <li>15岁的初中生因为过度沉迷于抖音视频和父母产生冲突，跳楼死亡</li>
+                    <li>14岁少女因为沉迷游戏给主播打赏六万元，最终因承受不住各方压力选择了结束自己幼小的生命</li>
+                    <li>留守孩子为了打游戏连续5天5夜不睡觉</li>
+                </ul>
+            </div>
+            <!-- <div class="content">
+                <ul class="scroll">
+                    <li>15岁留守女孩玩手机游戏一天，突然右眼失明</li>
+                    <li>7岁男孩沉迷玩手机，一觉醒来脖子动不了</li>
+                    <li>15岁男童玩手机一个月,每天睡眠时间不到三小时,最后中风瘫痪</li>
+                    <li>13岁男童因为父母没收其手机跳楼死亡</li>
+                    <li>15岁的初中生因为过度沉迷于抖音视频和父母产生冲突，跳楼死亡</li>
+                    <li>14岁少女因为沉迷游戏给主播打赏六万元，最终因承受不住各方压力选择了结束自己幼小的生命</li>
+                    <li>留守孩子为了打游戏连续5天5夜不睡觉</li>
+                </ul>
+            </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+
+   <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="./js/i5scroll.js"></script>
+    <script>
+        $('.i35-title li').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.content').eq($(this).index()).show().siblings('.content').hide();
+        });
+
+        $(".scroll").i5Scroll();
+    </script>
+</body>
+
+</html>
